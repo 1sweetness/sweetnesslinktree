@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRAY_VEN SWEETNESS - Links</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .linktree-container {
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Profile Section */
+        .profile {
+            margin-bottom: 30px;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            animation: glow 3s ease-in-out infinite alternate;
+            overflow: hidden;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            border: 3px solid #FFD700;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-placeholder {
+            font-size: 40px;
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .profile-image .emoji-fallback {
+            font-size: 50px;
+            color: #000;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4); }
+            to { box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6); }
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFD700;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .profile-subtitle {
+            font-size: 16px;
+            color: #228B22;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .profile-bio {
+            font-size: 14px;
+            color: #d0d0d0;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .profile-tagline {
+            font-size: 13px;
+            color: #FFD700;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        /* Links Section */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link-button {
+            display: block;
+            width: 100%;
+            padding: 18px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 25px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .link-button:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 215, 0, 0.2);
+            border-color: #FFD700;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .link-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Special styling for different link types */
+        .email-link {
+            background: linear-gradient(135deg, rgba(34, 139, 34, 0.2), rgba(0, 100, 0, 0.2));
+            border-color: #228B22;
+        }
+
+        .email-link:hover {
+            background: linear-gradient(135deg, rgba(34, 139, 34, 0.3), rgba(0, 100, 0, 0.3));
+            border-color: #228B22;
+            box-shadow: 0 8px 25px rgba(34, 139, 34, 0.3);
+        }
+
+        .social-link {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(184, 134, 11, 0.2));
+            border-color: #FFD700;
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(184, 134, 11, 0.3));
+            border-color: #FFD700;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .music-link {
+            background: linear-gradient(135deg, rgba(34, 139, 34, 0.2), rgba(255, 215, 0, 0.2));
+            border-color: #228B22;
+        }
+
+        .music-link:hover {
+            background: linear-gradient(135deg, rgba(34, 139, 34, 0.3), rgba(255, 215, 0, 0.3));
+            border-color: #228B22;
+            box-shadow: 0 8px 25px rgba(34, 139, 34, 0.3);
+        }
+
+        /* Spotify Enhanced Options */
+        
+        /* Option 1: Music Visualizer Bars */
+        .spotify-visualizer {
+            position: relative;
+            overflow: visible;
+        }
+        
+        .music-bars {
+            display: inline-flex;
+            gap: 3px;
+            margin-right: 10px;
+            align-items: flex-end;
+            height: 20px;
+        }
+        
+        .bar {
+            width: 3px;
+            background: #FFD700;
+            border-radius: 2px;
+            animation: musicBar 1.5s ease-in-out infinite;
+        }
+        
+        .bar:nth-child(1) { height: 8px; animation-delay: 0s; }
+        .bar:nth-child(2) { height: 15px; animation-delay: 0.3s; }
+        .bar:nth-child(3) { height: 12px; animation-delay: 0.6s; }
+        .bar:nth-child(4) { height: 6px; animation-delay: 0.9s; }
+        
+        @keyframes musicBar {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(2); }
+        }
+        
+        /* Option 2: Pulsing Circle */
+        .spotify-pulse {
+            position: relative;
+        }
+        
+        .pulse-circle {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: #FFD700;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .pulse-circle::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #228B22;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite 1s;
+        }
+        
+        @keyframes pulse {
+            0% { transform: translateY(-50%) scale(1); opacity: 1; }
+            100% { transform: translateY(-50%) scale(2.5); opacity: 0; }
+        }
+        
+        /* Option 3: Floating Notes */
+        .spotify-notes {
+            position: relative;
+            overflow: visible;
+        }
+        
+        .floating-notes {
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            display: flex;
+            gap: 8px;
+        }
+        
+        .note {
+            color: #FFD700;
+            font-size: 16px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .note:nth-child(1) { animation-delay: 0s; }
+        .note:nth-child(2) { animation-delay: 1s; }
+        .note:nth-child(3) { animation-delay: 2s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); opacity: 0.7; }
+            50% { transform: translateY(-15px); opacity: 1; }
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 480px) {
+            .linktree-container {
+                padding: 10px;
+            }
+            
+            .profile-name {
+                font-size: 20px;
+            }
+            
+            .link-button {
+                padding: 15px 18px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="linktree-container">
+        <!-- Profile Section -->
+        <div class="profile">
+            <div class="profile-image">
+                <img src="LOGO.png.jpg" alt="KRAY_VEN SWEETNESS Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="profile-placeholder" style="display: none;">👨‍🍳</div>
+            </div>
+            <h1 class="profile-name">KRAY_VEN SWEETNESS</h1>
+            <p class="profile-subtitle">Content Creator & Influencer</p>
+            <p class="profile-bio">Seducing your senses with island spices and sultry flavors. Every dish tells a story of passion, heat, and irresistible Caribbean charm that moves with the rhythm.</p>
+            <p class="profile-tagline">"Taste the music, feel the art, experience the sweetness ✨"</p>
+        </div>
+
+        <!-- Links Section -->
+        <div class="links">
+            <a href="https://www.instagram.com/KRAY_VEN.SWEETNESS" class="link-button social-link" target="_blank">
+                📱 Instagram
+            </a>
+            
+            <a href="https://www.tiktok.com/@kray_ven.sweetnes?_t=ZP-8z8AxZ6IGi7&_r=1" class="link-button social-link" target="_blank">
+                🎵 TikTok
+            </a>
+            
+            <!-- Combined Pulsing + Floating Notes Spotify Button -->
+            <a href="https://open.spotify.com/playlist/22I36PhhMrEFYrxoSl8CRi?si=aXiik58TT9O01NVL8StmUw&pi=cVnbMGJHTsydq&pt=d7b1be99929805608eb27d60a7f00e1d" class="link-button music-link spotify-pulse spotify-notes" target="_blank" rel="noopener">
+                <div class="pulse-circle"></div>
+                <div class="floating-notes">
+                    <span class="note">♪</span>
+                    <span class="note">♫</span>
+                    <span class="note">♪</span>
+                </div>
+                MY SPOTIFY PLAYLIST
+            </a>
+            
+            <a href="#" class="link-button" onclick="showMessage('Coming Soon!')">
+                🛍 Shop My Favorites
+            </a>
+            
+            <a href="#" class="link-button" onclick="showMessage('Subscribe for Updates!')">
+                💌 Newsletter
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>📧 1kray.vensweetness@gmail.com</p>
+            <p>© 2024 KRAY_VEN SWEETNESS | Made with 💖</p>
+        </div>
+    </div>
+
+    <script>
+        function showMessage(message) {
+            alert(message);
+        }
+
+        // Add some interactive effects
+        document.querySelectorAll('.link-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s ease-out;
+                    pointer-events: none;
+                `;
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
